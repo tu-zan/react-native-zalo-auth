@@ -189,8 +189,14 @@ public class ZaloKitModule extends ReactContextBaseJavaModule {
     final String[] fields = {"id", "birthday", "gender", "picture", "name", "phone_number"};
     ZaloSDK.Instance.getProfile(reactContext.getCurrentActivity(), tokenData.accessToken, response -> {
       try {
+        Log.d("ZALO_RESPONSE getUserProfile", response.toString());
+
         final WritableMap data = Util.convertJsonToMap(response);
+
+        Log.d("ZALO_MAPPED_DATA", data.toString());
+
         System.out.println(data);
+        
         if (data.hasKey("error") && data.getInt("error") != 0) {
           promise.reject(String.valueOf(data.getInt("error")), data.getString("message"));
         } else promise.resolve(data);
