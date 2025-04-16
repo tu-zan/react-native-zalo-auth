@@ -1,54 +1,60 @@
-
 buildscript {
-    ext {
-        buildToolsVersion = "28.0.3"
-        minSdkVersion = 18
-        compileSdkVersion = 28
-        targetSdkVersion = 28
-        supportLibVersion = "28.0.0"
-    }
-    repositories {
-        jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
+    if (project == rootProject) {
+        repositories {
+            google()
+            mavenCentral()
+            jcenter()
         }
-    }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
-        classpath 'com.google.gms:google-services:4.0.1'
+        dependencies {
+            classpath 'com.android.tools.build:gradle:3.5.3'
+        }
     }
 }
 
 apply plugin: 'com.android.library'
 
-android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
 
+android {
+    compileSdkVersion safeExtGet('ZaloKit_compileSdkVersion', 30)
     defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion safeExtGet('ZaloKit_minSdkVersion', 16)
+        targetSdkVersion safeExtGet('ZaloKit_targetSdkVersion', 30)
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
     }
     lintOptions {
-        abortOnError false
+        disable 'GradleCompatible'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 repositories {
-    mavenCentral()
+    mavenLocal()
     maven {
-        url 'https://maven.google.com/'
-        name 'Google'
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url("$rootDir/../node_modules/react-native/android")
     }
+    google()
+    mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    implementation "com.zing.zalo.zalosdk:core:+"
-    implementation "com.zing.zalo.zalosdk:auth:+"
+    //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    api "me.zalo:sdk-core:4.2.0704"
+    api "me.zalo:sdk-auth:4.2.0704"
+    api "me.zalo:sdk-openapi:4.2.0704"
 }
-
