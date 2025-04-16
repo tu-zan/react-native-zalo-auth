@@ -1,0 +1,35 @@
+{
+  "name": "react-native-zalo-auth",
+  "version": "2.1.2",
+  "description": "A React Native module for integrating Zalo SDK authentication",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-zan/react-native-zalo-auth.git"
+  },
+  "keywords": [
+    "react-native",
+    "zalo",
+    "zalo-auth",
+    "react-native-zalo",
+    "zalo-sdk",
+    "react-native-module"
+  ],
+  "author": "Tu Victor",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": ">=0.60.0",
+    "react": ">=16.8.0"
+  },
+  "homepage": "https://github.com/tu-zan/react-native-zalo-auth",
+  "bugs": {
+    "url": "https://github.com/tu-zan/react-native-zalo-auth/issues"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
