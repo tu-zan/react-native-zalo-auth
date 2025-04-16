@@ -8,14 +8,8 @@
 
 Android | iOS
 ------------ | -------------
-<img src="https://github.com/phithu/rn-zalo/blob/master/screenshots/android.gif" width="360"> | <img src="https://github.com/phithu/rn-zalo/blob/master/screenshots/ios.gif" width="360">
+<img src="https://github.com/tu-zan/react-native-zalo-auth/blob/master/screenshots/android.gif" width="360"> | <img src="https://github.com/tu-zan/react-native-zalo-auth/blob/master/screenshots/ios.gif" width="360">
 
-
-### Installation
-
-```sh
-yarn add rn-zalo or npm i rn-zalo --save
-```
 
 ### Zalo SDK Documents
 - iOS: https://developers.zalo.me/docs/sdk/ios-sdk-9
