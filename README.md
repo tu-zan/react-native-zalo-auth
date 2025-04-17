@@ -6,13 +6,13 @@
   
   Zalo SDK for React Native
   <div>
-  <img src="https://img.shields.io/npm/dw/react-native-zalo-kit" />
+  <img src="https://img.shields.io/npm/dw/react-native-zalo-auth" />
 
-  <img src="https://img.shields.io/npm/v/react-native-zalo-kit" />
+  <img src="https://img.shields.io/npm/v/react-native-zalo-auth" />
 
-  <img src="https://img.shields.io/github/license/maitrungduc1410/react-native-zalo-kit" />
+  <img src="https://img.shields.io/github/license/tu-zan/react-native-zalo-auth" />
 
-  <img src="https://img.shields.io/github/stars/maitrungduc1410/react-native-zalo-kit?style=social" />
+  <img src="https://img.shields.io/github/stars/tu-zan/react-native-zalo-auth?style=social" />
   </div>
 </h1>
 
@@ -34,10 +34,10 @@
 
 # Installation
 With npm:
-`$ npm install react-native-zalo-kit --save`
+`$ npm install react-native-zalo-auth --save`
 
 With yarn:
-`$ yarn add react-native-zalo-kit`
+`$ yarn add react-native-zalo-auth`
 
 # Supported APIs
 Zalo has stopped suporting some APIs, which will throw `Application is not registered for this request` error when calling. [Check here](https://developers.zalo.me/changelog/v211028-dung-ho-tro-mot-so-social-api-6142) for details.
@@ -317,9 +317,9 @@ module.exports = {
   expo: {
     // ...other configs
     plugins: [
-      ['react-native-zalo-kit/expo/withAppDelegateDebug'],
-      ['react-native-zalo-kit/expo/withMainActivityDebug'],
-      ['react-native-zalo-kit/expo/withMainApplicationDebug']
+      ['react-native-zalo-auth/expo/withAppDelegateDebug'],
+      ['react-native-zalo-auth/expo/withMainActivityDebug'],
+      ['react-native-zalo-auth/expo/withMainApplicationDebug']
     ],
   },
 };
@@ -369,7 +369,7 @@ module.exports = {
         },
       ],
       [
-        "react-native-zalo-kit/expo",
+        "react-native-zalo-auth/expo",
         {
           appId: "2451745039837416278",
           appDelegateContent,
@@ -391,7 +391,7 @@ And you should get a fully configured Expo project with ZaloKit. You can view ex
 # Usage
 You can import the whole library like:
 ```js
-import ZaloKit from 'react-native-zalo-kit'
+import ZaloKit from 'react-native-zalo-auth'
 
 // Usage:
 ZaloKit.login()
@@ -399,14 +399,14 @@ ZaloKit.login()
 ```
 Or you can just import modules you need like:
 ```js
-import { login } from 'react-native-zalo-kit'
+import { login } from 'react-native-zalo-auth'
 
 // Usage
 login()
 ```
 ## Login
 ```js
-import { login, Constants } from 'react-native-zalo-kit'
+import { login, Constants } from 'react-native-zalo-auth'
 
 const login = async () => {
   try {
@@ -431,7 +431,7 @@ const login = async () => {
 - `AUTH_VIA_WEB`: login using Zalo web only
 ## Check if authenticated
 ```js
-import { isAuthenticated } from 'react-native-zalo-kit'
+import { isAuthenticated } from 'react-native-zalo-auth'
 
 const isAuthenticated = async () => {
   try {
@@ -448,7 +448,7 @@ const isAuthenticated = async () => {
 ```
 ## Get User Profile
 ```js
-import { getUserProfile } from 'react-native-zalo-kit'
+import { getUserProfile } from 'react-native-zalo-auth'
 
 const getUserProfile = async () => {
   try {
@@ -476,7 +476,7 @@ const getUserProfile = async () => {
 ```
 ## Logout
 ```js
-import { logout } from 'react-native-zalo-kit'
+import { logout } from 'react-native-zalo-auth'
 
 const logout = () => {
   logout()
@@ -485,7 +485,7 @@ const logout = () => {
 ## Get Application Hash Key (Android only)
 This is a helper function which returns app Hash key for Android, help you on setting up your app on [Zalo Developer Portal](https://developers.zalo.me/)
 ```js
-import { getApplicationHashKey } from 'react-native-zalo-kit'
+import { getApplicationHashKey } from 'react-native-zalo-auth'
 
 const getApplicationHashKey = () => {
   const key = getApplicationHashKey()
@@ -499,7 +499,7 @@ const getApplicationHashKey = () => {
 ## Get friend list used app
 This API is to get friends who have used Zalo app
 ```js
-import { getUserFriendList } from 'react-native-zalo-kit'
+import { getUserFriendList } from 'react-native-zalo-auth'
 
 const getUserFriendList = async () => {
   try {
@@ -538,7 +538,7 @@ const getUserFriendList = async () => {
 ## Get invitable friend list
 This API is to get friends who we can invite to use Zalo app
 ```js
-import { getUserInvitableFriendList } from 'react-native-zalo-kit'
+import { getUserInvitableFriendList } from 'react-native-zalo-auth'
 
 const getUserInvitableFriendList = async () => {
   try {
@@ -576,7 +576,7 @@ const getUserInvitableFriendList = async () => {
 ```
 ## Post to user's feed
 ```js
-import { postFeed } from 'react-native-zalo-kit'
+import { postFeed } from 'react-native-zalo-auth'
 
 const postFeed = async () => {
   try {
@@ -597,7 +597,7 @@ const postFeed = async () => {
 ```
 ## Send message to friend
 ```js
-import { sendMessage } from 'react-native-zalo-kit'
+import { sendMessage } from 'react-native-zalo-auth'
 
 const sendMessage = async () => {
   try {
@@ -619,7 +619,7 @@ const sendMessage = async () => {
 ```
 ## Invite friend to use Zalo app
 ```js
-import { inviteFriendUseApp } from 'react-native-zalo-kit'
+import { inviteFriendUseApp } from 'react-native-zalo-auth'
 
 const inviteFriendUseApp = async () => {
   try {
@@ -643,7 +643,7 @@ const inviteFriendUseApp = async () => {
 ## Send message by app
 This API is to share a link to a friend by sending a message which contains the link
 ```js
-import { sendMessageByApp } from 'react-native-zalo-kit'
+import { sendMessageByApp } from 'react-native-zalo-auth'
 
 const sendMessageByApp = async () => {
   try {
@@ -677,7 +677,7 @@ const sendMessageByApp = async () => {
 ## Post to feed by app
 This API is to share a link to user's feed
 ```js
-import { postFeedByApp } from 'react-native-zalo-kit'
+import { postFeedByApp } from 'react-native-zalo-auth'
 
 const postFeedByApp = async () => {
   try {
@@ -712,7 +712,7 @@ const postFeedByApp = async () => {
 ## Register new account
 This API is to share a link to user's feed
 ```js
-import { register } from 'react-native-zalo-kit'
+import { register } from 'react-native-zalo-auth'
 
 const register = async () => {
   try {

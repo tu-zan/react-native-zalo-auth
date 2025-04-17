@@ -45,11 +45,11 @@ module.exports = {
           },
         },
       ],
-      ['react-native-zalo-kit/expo/withAppDelegateDebug'],
-      ['react-native-zalo-kit/expo/withMainActivityDebug'],
-      ['react-native-zalo-kit/expo/withMainApplicationDebug'],
+      ['react-native-zalo-auth/expo/withAppDelegateDebug'],
+      ['react-native-zalo-auth/expo/withMainActivityDebug'],
+      ['react-native-zalo-auth/expo/withMainApplicationDebug'],
       // [
-      //   "react-native-zalo-kit/expo",
+      //   "react-native-zalo-auth/expo",
       //   {
       //     appId: "2451745039837416278",
       //     appDelegateContent,

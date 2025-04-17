@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-zalo-kit": ["./src/index"]
+      "react-native-zalo-auth": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

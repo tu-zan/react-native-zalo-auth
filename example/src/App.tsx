@@ -10,7 +10,7 @@ import {
   ScrollView,
   StatusBar,
 } from 'react-native';
-import ZaloKit from 'react-native-zalo-kit';
+import ZaloKit from 'react-native-zalo-auth';
 
 export default class App extends Component<any, any> {
   constructor(props: any) {

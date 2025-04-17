@@ -1,6 +1,6 @@
 {
-  "name": "react-native-zalo-kit",
-  "version": "4.0.5",
+  "name": "@tuzan/react-native-zalo-auth",
+  "version": "4.1.1",
   "description": "Zalo SDK implementation for React Native",
   "main": "lib/commonjs/index",
   "exports": {
@@ -40,7 +40,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-zalo-kit.podspec",
+    "react-native-zalo-auth.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -59,21 +59,22 @@
     "bootstrap": "yarn example && yarn && yarn pods"
   },
   "keywords": [
-    "react-native-zalo-kit",
+    "react-native-zalo-auth",
     "react-native-zalo-sdk",
     "react native zalo",
     "react native zalo login",
     "react native zalo sdk",
     "react native zalo auth"
   ],
-  "repository": "https://github.com/maitrungduc1410/react-native-zalo-kit",
-  "author": "Mai Trung Duc <maitrungduc1410@gmail.com> (https://github.com/maitrungduc1410)",
+  "repository": "https://github.com/tu-zan/react-native-zalo-auth",
+  "author": "Tu Victor <tuzan.victor@gmail.com> (https://github.com/tu-zan)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maitrungduc1410/react-native-zalo-kit/issues"
+    "url": "https://github.com/tu-zan/react-native-zalo-auth/issues"
   },
-  "homepage": "https://github.com/maitrungduc1410/react-native-zalo-kit#readme",
+  "homepage": "https://github.com/tu-zan/react-native-zalo-auth#readme",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {

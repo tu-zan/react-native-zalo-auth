@@ -1,8 +1,7 @@
 //
 //  PKCE.swift
-//  react-native-zalo-kit
+//  react-native-zalo-auth
 //
-//  Created by Duc Trung Mai on 6/3/22.
 //
 
 import Foundation
