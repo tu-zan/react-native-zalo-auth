@@ -65,7 +65,7 @@ class ZaloKit: NSObject {
             let codeChallenege = generateCodeChallenge(codeVerifier: codeVerifier)
 //            let state = generateState(withLength: 10)
 
-            ZaloSDK.sharedInstance().authenticateZalo(with: type, parentController: presentedViewController, codeChallenge: codeChallenege, extInfo: nil, handler: {(response) in
+            ZaloSDK.sharedInstance().authenticateZalo(with: type, permissions: ["user_info", "phone"], parentController: presentedViewController, codeChallenge: codeChallenege, extInfo: nil, handler: {(response) in
 
                 if response?.isSucess == true {
                     let oauthCode =  response?.oauthCode ?? ""
