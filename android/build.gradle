@@ -19,7 +19,6 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    namespace "com.reactnativezaloauth" // 👈 thêm namespace nếu dùng AGP 8+
     compileSdkVersion safeExtGet('ZaloKit_compileSdkVersion', 35)
     defaultConfig {
         minSdkVersion safeExtGet('ZaloKit_minSdkVersion', 24)
