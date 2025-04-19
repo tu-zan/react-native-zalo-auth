@@ -7,7 +7,7 @@ buildscript {
         }
 
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.5.3'
+            classpath 'com.android.tools.build:gradle:8.2.2'
         }
     }
 }
@@ -19,10 +19,11 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('ZaloKit_compileSdkVersion', 30)
+    namespace "com.reactnativezaloauth" // 👈 thêm namespace nếu dùng AGP 8+
+    compileSdkVersion safeExtGet('ZaloKit_compileSdkVersion', 35)
     defaultConfig {
-        minSdkVersion safeExtGet('ZaloKit_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('ZaloKit_targetSdkVersion', 30)
+        minSdkVersion safeExtGet('ZaloKit_minSdkVersion', 24)
+        targetSdkVersion safeExtGet('ZaloKit_targetSdkVersion', 34)
 
     }
 
