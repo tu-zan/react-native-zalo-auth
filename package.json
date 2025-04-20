@@ -1,7 +1,7 @@
 {
-  "name": "@tuzan/react-native-zalo-auth",
-  "version": "4.1.1",
-  "description": "Zalo SDK implementation for React Native",
+  "name": "react-native-zalo-auth",
+  "version": "1.0.0",
+  "description": "Zalo SDK for React Native",
   "main": "lib/commonjs/index",
   "exports": {
     ".": {

@@ -48,7 +48,38 @@ const logout: () => void = ZaloKit.logout;
 
 const isAuthenticated: () => Promise<boolean> = ZaloKit.isAuthenticated;
 
-const getUserProfile: () => Promise<IUserProfile> = ZaloKit.getUserProfile;
+const getUserProfile = async (accessToken?: string): Promise<IUserProfile | null> => {
+  if (Platform.OS === 'android') {
+    return await ZaloKit.getUserProfile();
+  }
+
+  if (!accessToken) {
+    console.warn('Access token is required for iOS');
+    return null;
+  }
+
+  try {
+    const response = await fetch(
+      'https://graph.zalo.me/v2.0/me?fields=id,birthday,gender,picture,name,phone_number',
+      {
+        method: 'GET',
+        headers: {
+          access_token: accessToken,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Zalo API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data as IUserProfile;
+  } catch (error) {
+    console.error('Failed to get Zalo user profile:', error);
+    return null;
+  }
+};
 
 const getApplicationHashKey = (): string => {
   if (Platform.OS === 'android') {

@@ -17,7 +17,7 @@ export interface IZaloAuthResponse {
 export interface IUserProfile {
   id: string;
   name: string;
-  phoneNumber: string;
+  phone_number?: string;
   gender: string;
   birthday: string;
   picture: {
